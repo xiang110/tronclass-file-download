@@ -27,7 +27,7 @@ small { display: block; color: #64748b; margin: 4px 0; font-size: 12px; }
 [hidden] { display: none !important; }
 </style>
 <section id="panel" hidden>
-  <h3>TronClass 教材連結 V5 · API + 下載助手</h3>
+  <h3>TronClass 教材連結助手</h3>
   <div class="bar">
     <label>課程 ID <input id="cid" inputmode="numeric" placeholder="396276"></label>
     <button id="scan">取得全部教材</button>

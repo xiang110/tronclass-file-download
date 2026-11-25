@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   if (window.top !== window || location.hostname !== 'elearn2.fju.edu.tw') return;
-  const marker = 'tc-v6-official-button';
+  const marker = 'tc-official-button';
   function officialLink(row) {
     return [...row.querySelectorAll('a[href][original-title="下載"]')].find(a => {
       try {
