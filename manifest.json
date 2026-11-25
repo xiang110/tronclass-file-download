@@ -1,1 +1,27 @@
-{"manifest_version":3,"name":"TronClass 教材連結助手","version":"1.1.0","description":"整理教材連結並開啟目前預覽的 PDF","content_scripts":[{"matches":["https://elearn2.fju.edu.tw/*","https://*.tronclass.com.tw/*"],"js":["content.js"],"run_at":"document_idle"}]}
+{
+  "manifest_version": 3,
+  "name": "TronClass 教材連結助手",
+  "version": "5.0.0",
+  "description": "教材清單、附件引用 API、PDF Viewer 與 Network 監測",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://elearn2.fju.edu.tw/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "webRequest"
+  ],
+  "host_permissions": [
+    "https://elearn2.fju.edu.tw/*",
+    "https://mediaelearn2.fju.edu.tw/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
