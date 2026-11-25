@@ -1,24 +1,19 @@
 # 檔案下載
 
-TronClass 教材連結助手 V5.0（Chrome Manifest V3 擴充功能）。此儲存庫採用你提供的 `tronclass-links-v5.zip` 版本。
+TronClass 教材連結助手 V7.0.0（Chrome Manifest V3 擴充功能）。此儲存庫包含使用者提供的 `tronclass-integrated-v7-fixed.zip` 原始版本及其中的六個檔案。
 
 ## 功能
 
-- 整理課程教材清單，標示允許或限制下載；只有平台標示 `allow_download: true` 的附件提供下載網址。
-- 比對教材活動的附件引用 API，顯示 Reference ID、Upload ID、Storage Key 等資訊。
-- 偵測目前頁面的 PDF 預覽，對應教材清單與下載權限。
-- 監測輔大 TronClass 與媒體服務的相關請求，顯示網域、HTTP 狀態、格式、大小與請求次數；不保留網址中的簽章或查詢參數。
-- 複製允許下載的連結，或匯出教材資訊 CSV。
+- 整理輔大 TronClass 課程教材與附件引用，顯示 Reference ID、Upload ID 和 PDF 預覽狀態。
+- 在頁面已提供官方下載連結的附件列加入快捷按鈕；清除教材清單頁面舊的注入標籤。
+- 面板上的「下載」按鈕會對每筆附件嘗試 `/api/uploads/reference/document/{id}/url`，失敗時開啟 reference blob 路徑。這段程式**沒有先檢查**教材的 `allow_download` 設定；是否取得檔案由伺服器的權限驗證決定。請遵守課程教材的使用規定。
+- 複製連結或匯出 CSV。背景腳本記錄相關媒體請求的網域、狀態與格式，不保留 URL 的查詢參數或簽章。
 
 ## 安裝
 
 1. 下載 [tronclass-links.zip](tronclass-links.zip) 並解壓縮。
 2. 在 Chrome 開啟 `chrome://extensions/`，啟用「開發人員模式」。
-3. 停用舊版，點選「載入未封裝項目」，選擇解壓後含有 `manifest.json` 的 `tronclass-links-v5` 資料夾。
-4. 重新整理輔大 TronClass 課程頁面，使用右下角的教材連結面板。
+3. 停用舊版，點選「載入未封裝項目」，選擇解壓後的 `tronclass-integrated-v7-fixed` 資料夾。
+4. 重新整理 `elearn2.fju.edu.tw` 的課程頁面。
 
-## 使用範圍
-
-這版僅設定支援 `elearn2.fju.edu.tw`，Network 監測另需 `mediaelearn2.fju.edu.tw` 的網站權限。附件引用 API 尚未在登入環境驗證；若查詢失敗，原教材清單仍可使用。下載權限以教材清單的設定為準，Network 摘要不提供限制下載的簽章網址。請遵守課程教材的使用規定。
-
-原包裝內的簡要說明見 [README.txt](README.txt)。
+這份 ZIP 內的 `README.txt` 包含舊版 V6 的資料夾名稱；安裝 V7 請以本頁步驟為準。程式已通過 JavaScript 語法與 ZIP 完整性檢查，尚未在實際登入的課程環境驗證功能。

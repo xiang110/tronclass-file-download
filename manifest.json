@@ -1,15 +1,17 @@
 {
   "manifest_version": 3,
   "name": "TronClass 教材連結助手",
-  "version": "5.0.0",
-  "description": "教材清單、附件引用 API、PDF Viewer 與 Network 監測",
+  "version": "7.0.0",
+  "description": "教材清單、附件引用、Network、PDF Viewer 與官方附件快捷按鈕",
   "content_scripts": [
     {
       "matches": [
         "https://elearn2.fju.edu.tw/*"
       ],
       "js": [
-        "content.js"
+        "content.js",
+        "attachment-buttons.js",
+        "courseware-buttons.js"
       ],
       "run_at": "document_idle"
     }
