@@ -1,0 +1,1 @@
+{"manifest_version":3,"name":"TronClass 教材連結助手","version":"1.0.0","description":"整理目前課程可下載教材的連結","content_scripts":[{"matches":["https://elearn2.fju.edu.tw/*","https://*.tronclass.com.tw/*"],"js":["content.js"],"run_at":"document_idle"}]}
